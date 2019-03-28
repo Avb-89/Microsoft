@@ -1,4 +1,4 @@
-## Installation, Storage, and Compute with Windows Server 2016:
+## Installation, Storage, and Compute with Windows Server 2016 (70-740):
 
 ### _Сначала рассмотрим версии WindowsServer2016_
 
