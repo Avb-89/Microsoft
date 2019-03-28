@@ -10,5 +10,6 @@
     доменный контроллер
       DC
     Сервера для выполнения операций
-      Server1
-      Server2
+      Server1 - WindowsServer
+      Server2 - NanoServer
+  
