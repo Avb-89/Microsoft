@@ -24,7 +24,7 @@
 
 * `1.4 Ghz x64 с поддержкой NX, DEP, CMPXCHG16b, LAHF/SAHF, и PrefetchW` -- (Подходит большинство современных процессоров)    
 * `SLAT support (EPT or NPT)`    
-* `512 MB* or 2GB ECC-type (or similar) RAM` -- (512 не хватит на запуск (надо 1024), но это минимальное кол-во озу, для уже работающей машины)    
+* `512 MB* or 2GB ECC-type (or similar) RAM` -- (512 не хватит на установку (надо 1024), но это минимальное кол-во озу, для уже работающей машины)    
 * `32 GB* Hard disk space` -- (32гб только установить, все остальное, включая обновления, потребует больше места)     
 * `Gigabit Ethernet NIC that is PCI Express compliant and support PXE`
 
