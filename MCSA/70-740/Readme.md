@@ -73,13 +73,63 @@
 На втором:    
 но в этот раз уже выберем из списка Windows server 2016
 
-После установки вас встретит "Приветливое" черное окошко cmd.exe :laughing:
+После установки вас встретит черное окошко cmd.exe
 
-Настройка имени и IP адреса делается не чем не сложнее чем с интерфейсом:
+Настройка имени и IP адреса делается проще чем с интерфейсом:
 
 ````
 C:\Users\Administrator>sconfig
 ````
+В нашем случае ip адрес выставим "DHCP"
+
+Настройка через PowerShell:
+Чтобы воспользоваться PowerShell мы должны ввести команду
+```
+C:\Windows\System32>PowerShell
+```
+теперь очистим экран
+```
+[S1]: PS C:\Users\Administrator\Documents> cls
+```
+
+Для того чтобы просмотреть информацию о подключении (может пригодиться для сложных PowerShell скриптов)
+```
+[S1]: PS C:\Users\Administrator\Documents> Get-NetIPAddress
+```
+Для изменения IP адреса
+```
+[S1]: PS C:\Users\Administrator\Documents> New-NetIPAddress -InterfaceAlias Ethernet -IPAddress 192.168.3.3 -PrefixLength 24
+```
+В нашей лабаратории нужно получить адрес от DHCP:
+```
+[S1]: PS C:\Users\Administrator\Documents> Set-NetIPInterface -InterfaceAlias Ethernet -Dhcp Enabled
+```
+название `InterfaceAlias` я взял с вывода команды `Get-NetIPAddress`
+
+После настройки имени и сети займемся "тюнингом" (это не обязательно):
+
+Для начала давайте поменяем разрешение экрана:
+```
+[S1]: PS C:\Users\Administrator\Documents> Get-DisplayResolution
+```
+Покажет какое в данный момент у меня разрешение, и при необходимости я могу поменять его командой `Set-DisplayResolution 1280  720` (разрешение которое вам нужно например `1280  720`)
+
+Вторым шагом установим время и дату:
+Установим зону
+```
+[S1]: PS C:\Users\Administrator\Documents> Set-TimeZone "Mauritius Standard Time"
+```
+чтобы выяснить какие зоны есть в системе достаточно ввести и на экране появится список все зон
+```
+[S1]: PS C:\Users\Administrator\Documents> tzutil.exe /l
+```
+Собственно настройка времени и даты
+```
+[S1]: PS C:\Users\Administrator\Documents> Set-Date -date "2/4/2019 17:40 PM"
+
+Monday, February 4, 2019 5:40:00 PM
+```
+
 
 
 ### _Установка Ролей и компонентов (Desktop Вариант)_
@@ -104,7 +154,45 @@ Microsoft предлогает несколько способов для опр
 ![Alt-текст](https://downloader.disk.yandex.ru/preview/d8c3336648d4d0bb8df7e4c3e07c8ce10cc8327f9a2b55a2150eeec4129aefd2/5c9e513b/rLqfhFLHyCT96T6w23el4Zsu9zDVTxKHi8igGB6GOdBvvZTA76J3znkOj3LYcnEVzxIA2ygMl3-HBOsVqWfAWQ%3D%3D?uid=0&filename=2019-03-29_17-06-11.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048)
 
 
-То что я показал присутсвует в экзамене, но по сути там всего пара вопросов про это.
+Для работы нашей маленькой лабаратории нам потребуется чтобы кто-то раздавал IP адреса. Эту роль на себя берет DHCP
 
+Чтобы увидеть какие есть роли и компоненты, а также проверить установлены ли они:
 
-В основном экзамен строится на вопросах связанных с администрированием через PowerShell.  Поэтому отстраивать нашу маленькую лабараторию мы будем непосредственно через него.
+```
+PS C:\> Get-WindowsFeature
+
+```
+
+Чтобы проверить установлен ли у нас непосредственно DHCP введем:
+
+```
+[DC1]: PS C:\> Get-WindowsFeature -Name *dhcp*
+
+Display Name                                            Name                       Install State
+------------                                            ----                       -------------
+[ ] DHCP Server                                         DHCP                           Available
+        [ ] DHCP Server Tools                           RSAT-DHCP                      Available
+```
+Видно что эта роль у нас не установлена.
+Чтобы установить ее воспользуемся командой
+```
+[DC1]: PS C:\> Install-WindowsFeature -Name DHCP, RSAT-DHCP  -IncludeAllSubFeature
+
+Success Restart Needed Exit Code      Feature Result
+------- -------------- ---------      --------------
+True    No             Success        {Remote Server Administration Tools, DHCP ...
+```
+Теперь снова глянем установлена ли роль
+
+```
+[DC1]: PS C:\> Get-WindowsFeature -Name *dhcp*
+
+Display Name                                            Name                       Install State
+------------                                            ----                       -------------
+[X] DHCP Server                                         DHCP                           Installed
+        [X] DHCP Server Tools                           RSAT-DHCP                      Installed
+```
+Роль установлена. Настроим ее
+TODO: процесс настройки dhcp
+
+Теперь у нас есть dhcp сервер который раздает адреса.
