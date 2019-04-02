@@ -52,7 +52,7 @@
 Не думаю, что надо учить вас как установить Windows по дефолту.    
 ~~Нажимаем далее, далее, далее, далее, без заморочек.~~    
 
-На первой машине:    
+**На первой машине:***    
 Из списка ОС выбираем windows Server 2016 (Desktop Experience)
 
 
@@ -70,7 +70,7 @@
 3) Меняем IP Адрес. Я выбрал 192.168.3.1 Но вы можете использовать любой.
 ![Alt-текст](https://downloader.disk.yandex.ru/preview/bf1b9e71928fb21464fb267fb1637089b2cc8f47c4fb28460ba189249d2bcaf7/5c9e42c3/l8mqH_Q-U9UnADRa5iqodeDJvVVeMFxUSf-JxF05fii-iCUFZ3OVVLonVI7SYeg0PoYQcxPdnkmSojh9y9OVqA%3D%3D?uid=0&filename=2019-03-29_16-05-30.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048)
 
-На втором:    
+**На второй Машине**:    
 но в этот раз уже выберем из списка Windows server 2016
 
 После установки вас встретит черное окошко cmd.exe
@@ -82,7 +82,7 @@ C:\Users\Administrator>sconfig
 ````
 В нашем случае ip адрес выставим "DHCP"
 
-Настройка через PowerShell:
+***Настройка через PowerShell:***
 Чтобы воспользоваться PowerShell мы должны ввести команду
 ```
 C:\Windows\System32>PowerShell
