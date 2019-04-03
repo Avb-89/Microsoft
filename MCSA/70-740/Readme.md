@@ -60,15 +60,14 @@
 
 После установки перед вами откроется консоль администрирования там мы и поменяем `имя` и `IP адрес`.
 
-![Alt-текст](https://downloader.disk.yandex.ru/preview/e792f06ea0f8a3c3c3aa72916426fd14f211bb9d5d9a5b8c7de58d29c71f40b7/5c9e3ce6/RXcx1cI8Tb2-15NjGVQDbiJF8oy_oW8M7miwggcrYPd-p_u_rD8OStL44EBf71uqyzHUCp7UZuiJRAAqzyPT9w%3D%3D?uid=0&filename=2019-03-29_15-41-43.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=1658x767)
 
 1) нажимаем на ссылки и нам откроются нужные места где поменять пораметры:
-
+TODO:Добавить картинку
 2) Меняем имя    
-![Alt-текст](https://downloader.disk.yandex.ru/preview/e3c7f2bc27b35090743ad0e48a105ade4f30398887422f23f9610eb94e54f529/5c9e40a4/u4AibxMPWOCOGuswJePLQ7DGCID4IHz9ixpQk-NllAZsM_dcF8Fno7dG7KFXLozH1f4qoQ94iBjIkc-mJ-c8Aw%3D%3D?uid=0&filename=2019-03-29_15-57-49.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048)
+TODO:Добавить картинку
 
 3) Меняем IP Адрес. Я выбрал 192.168.3.1 Но вы можете использовать любой.
-![Alt-текст](https://downloader.disk.yandex.ru/preview/bf1b9e71928fb21464fb267fb1637089b2cc8f47c4fb28460ba189249d2bcaf7/5c9e42c3/l8mqH_Q-U9UnADRa5iqodeDJvVVeMFxUSf-JxF05fii-iCUFZ3OVVLonVI7SYeg0PoYQcxPdnkmSojh9y9OVqA%3D%3D?uid=0&filename=2019-03-29_16-05-30.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048)
+TODO:Добавить картинку
 
 **На второй Машине**:    
 но в этот раз уже выберем из списка Windows server 2016
@@ -137,21 +136,16 @@ Monday, February 4, 2019 5:40:00 PM
 Microsoft предлогает несколько способов для определения ролей сервера. Первый это всем знакомый мастер "Добавить роли и компоненты" и второй (самая удобная на мой взгляд) это установка через PowerShell
 
 Нажимаем на добавить роли
-![Alt-текст](https://downloader.disk.yandex.ru/preview/dab7d5a03fd3d98cedd283fb0ddf2b8743e5066dd06e15f97830f5488c40c47f/5c9e4807/JoHShgLLaQ7BeyBZRhNdC9deoxyVX3xfef9Tq0Mpa9SWeYoJSdd3Y8vyO72FW_yGDVUPDmkDlFcIFMJVOefA8w%3D%3D?uid=0&filename=2019-03-29_16-28-58.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048)
-
+TODO:Добавить картинку
 В windows Server 2016 мы можем устанавливать роли не только на этой машине но и на других серверах под управлением Windows 2012 и выше. (В данном слайде не видно, так как машина у нас одна)
-
-![Alt-текст](https://downloader.disk.yandex.ru/preview/7ea0b4bb98122b7c9db1e445f745ff07c4938a2b2eb3e36308ca2b69fd2c1c72/5c9e4dea/bl5jPrkNDGOox8zolAUrAt1OYn-IvOJAqTO3JoCs7YE7pmfYuYnZlAJ-guPn_EHhoR_RmauTTuIU_mqHoq5uiw%3D%3D?uid=0&filename=2019-03-29_16-53-14.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048)
-
+TODO:Добавить картинку
 Для Примера давайте установим роль IIS сервер. Если нажать на "Inclide management tools" нам автоматически доставится и консоль управления IIS сервером.
-
-![Alt-текст](https://downloader.disk.yandex.ru/preview/4aed8d34cce83b11f46f4e96cc2b6ed16b24f95517ad9ecd666e83f51dbc047b/5c9e4efd/xU1PeH5nzDW8XP7RDmpt3OpfCMlCAl_Eb76um8uMVPpIP12J6ON_7VO0UTHsnnAL1urzRK5PITmovdpa31ELGQ%3D%3D?uid=0&filename=2019-03-29_16-59-15.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048)
+TODO:Добавить картинку
 
 Ставить будем по дефолту, дальше далее далее
 
 На экране Confirm Installation selections есть ссылочка на нашу конфигурацию. Это действительно круто, т.к. вы можете развернуть точно такую же конфигурацию на других серверах. Он сохранит по сути уже настроеный скрипт с вашими требованиями.
-
-![Alt-текст](https://downloader.disk.yandex.ru/preview/d8c3336648d4d0bb8df7e4c3e07c8ce10cc8327f9a2b55a2150eeec4129aefd2/5c9e513b/rLqfhFLHyCT96T6w23el4Zsu9zDVTxKHi8igGB6GOdBvvZTA76J3znkOj3LYcnEVzxIA2ygMl3-HBOsVqWfAWQ%3D%3D?uid=0&filename=2019-03-29_17-06-11.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048)
+TODO:Добавить картинку
 
 
 Для работы нашей маленькой лабаратории нам потребуется чтобы кто-то раздавал IP адреса. Эту роль на себя берет DHCP
