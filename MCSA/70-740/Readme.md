@@ -97,7 +97,11 @@ C:\Windows\System32>PowerShell
 ```
 Для изменения IP адреса
 ```
-[S1]: PS C:\Users\Administrator\Documents> New-NetIPAddress -InterfaceAlias Ethernet -IPAddress 192.168.3.3 -PrefixLength 24
+[S1]: PS C:\Users\Administrator\Documents> New-NetIPAddress -InterfaceAlias Ethernet -IPAddress 192.168.3.3 -PrefixLength 24 -DefaultGateway 192.168.3.1
+```
+Для того чтобы прописать DNS, если у вас несколько dns пишем их через запятую.
+```
+[S1]: PS C:\> Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses ("192.168.3.1")
 ```
 В нашей лабаратории нужно получить адрес от DHCP:
 ```
@@ -105,13 +109,22 @@ C:\Windows\System32>PowerShell
 ```
 название `InterfaceAlias` я взял с вывода команды `Get-NetIPAddress`
 
-После настройки имени и сети займемся "тюнингом" (это не обязательно):
+Теперь разберемя с именем машины:    
+для начала выясним имя машины на данный момент
+```
+[S1]: PS C:\> hostname
+```
+Потом изменим имя на то которое хотим:
+```
+[S1]: PS C:\> Rename-Computer -NewName S1
+```
+машина потребует перезагрузиться.
 
-Для начала давайте поменяем разрешение экрана:
+Поменяем разрешение экрана:
 ```
 [S1]: PS C:\Users\Administrator\Documents> Get-DisplayResolution
 ```
-Покажет какое в данный момент у меня разрешение, и при необходимости я могу поменять его командой `Set-DisplayResolution 1280  720` (разрешение которое вам нужно например `1280  720`)
+Покажет какое в данный момент у меня разрешение, и при необходимости я могу поменять его командой `Set-DisplayResolution 1280  720` (разрешение которое вам нужно, например попробуйте `1280  720`)
 
 Вторым шагом установим время и дату:
 Установим зону
@@ -128,7 +141,11 @@ C:\Windows\System32>PowerShell
 
 Monday, February 4, 2019 5:40:00 PM
 ```
-
+Теперь активируем наш windows
+```
+[S1]: PS C:\> slmgr.vbs -ipk XXXX-XXXX-XXXX-XXXX-XXXX
+```
+XXX- 'это ключ продукта который вы преобрели'.
 
 
 ### _Установка Ролей и компонентов (Desktop Вариант)_
