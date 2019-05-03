@@ -92,10 +92,14 @@ Resolve-DnsName используется в powershell
 В командную строку вводим Nslookup и вы попадете в консоль программы.
 с помощью ```help``` вы можете увидеть все команды доступные для этой утилиты.
 
-Попробуем поработать с ресурсом www.google.com
+Попробуем поработать с ресурсом www.yandex.ru
 
 ```
-> server www.googe.ru
-Default Server:  www.googe.ru
-Address:  109.206.181.75
+> server www.yandex.ru
+Default Server:  www.yandex.ru
+Addresses:  2a02:6b8:a::a
+          77.88.55.50
+          5.255.255.50
+          5.255.255.55
+          77.88.55.55
 ```
